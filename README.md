@@ -30,7 +30,7 @@ Check out the sample iOS app demonstrating real-time VAD:
 Add the following to your `Podfile` to integrate the library:
 
 ```ruby
-pod 'RealTimeCutVADLibrary', :git => 'https://github.com/helloooideeeeea/RealTimeCutVADLibrary.git', :tag => '1.0.3'
+pod 'RealTimeCutVADLibrary', :git => 'https://github.com/helloooideeeeea/RealTimeCutVADLibrary.git', :tag => '1.0.1'
 ```
 
 Then, run:
@@ -45,7 +45,7 @@ You can also integrate the library using Swift Package Manager. Add the followin
 
 ```swift
 .dependencies: [
-    .package(url: "https://github.com/helloooideeeeea/RealTimeCutVADLibrary.git", from: "1.0.3")
+    .package(url: "https://github.com/helloooideeeeea/RealTimeCutVADLibrary.git", from: "1.0.1")
 ]
 ```
 
@@ -93,6 +93,7 @@ extension ViewController: VADDelegate {
     }
 
     // Called when voice activity ends, providing WAV data at 16 kHz
+    // The Data object includes the WAV file header metadata, making it ready for playback or saving directly.
     func voiceEnded(withWavData wavData: Data!) {
         print("Voice ended. WAV data length: \(wavData.count) bytes")
     }
@@ -135,9 +136,8 @@ vadManager?.setThresholdWithVadStartDetectionProbability(
 // have a VAD probability greater than 70%.
 // Voice will be considered ended if 95% of the audio points in a 57-frame period
 // have a VAD probability less than 70%.
-)
+
 ```
-Note: Each VAD frame represents 0.032 seconds (1 / 16000 * 512 samples).
 
 #### **Important Notes:**
 - **Default Thresholds for Silero v4**: If you do not configure the VAD thresholds manually, the library will use default thresholds optimized for Silero model **v4**.
@@ -146,6 +146,9 @@ Note: Each VAD frame represents 0.032 seconds (1 / 16000 * 512 samples).
 ---
 
 ## Algorithm Explanation
+
+### ONNX Runtime for Silero VAD
+This library leverages **ONNX Runtime (C++)** to run the Silero VAD models efficiently. By utilizing ONNX Runtime, the library achieves high-performance inference across different platforms (iOS/macOS), ensuring fast and accurate voice activity detection.
 
 ### Why Use WebRTC's Audio Processing Module (APM)?
 This library utilizes WebRTC's APM for several key reasons:
@@ -201,4 +204,9 @@ config.voice_detection.enabled = false;
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
+
+## Author
+
+**helloooideeeeea**  
+[Email](mailto:yasushi.sakita@gmail.com)
 
