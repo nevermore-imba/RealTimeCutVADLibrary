@@ -30,7 +30,7 @@ Check out the sample iOS app demonstrating real-time VAD:
 Add the following to your `Podfile` to integrate the library:
 
 ```ruby
-pod 'RealTimeCutVADLibrary', :git => 'https://github.com/helloooideeeeea/RealTimeCutVADLibrary.git', :tag => '1.0.1'
+pod 'RealTimeCutVADLibrary', :git => 'https://github.com/helloooideeeeea/RealTimeCutVADLibrary.git', :tag => '1.0.4'
 ```
 
 Then, run:
@@ -45,7 +45,7 @@ You can also integrate the library using Swift Package Manager. Add the followin
 
 ```swift
 .dependencies: [
-    .package(url: "https://github.com/helloooideeeeea/RealTimeCutVADLibrary.git", from: "1.0.1")
+    .package(url: "https://github.com/helloooideeeeea/RealTimeCutVADLibrary.git", from: "1.0.4")
 ]
 ```
 
