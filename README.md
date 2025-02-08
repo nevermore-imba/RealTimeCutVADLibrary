@@ -203,10 +203,4 @@ config.voice_detection.enabled = false;
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
----
-
-## Author
-
-**helloooideeeeea**  
-[Email](mailto:yasushi.sakita@gmail.com)
 
