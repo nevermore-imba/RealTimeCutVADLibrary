@@ -72,8 +72,11 @@ class ViewController: UIViewController {
         // Set VAD delegate to receive callbacks
         vadManager?.delegate = self
 
-        // Set Silero model version (v4 or v5)
+        // Set Silero model version (v4 or v5). Version v4 is recommended.
         vadManager?.setSileroModel(.v4)
+
+        // Calling setVADThreshold is optional. If not called, the recommended default values will be used.
+        vadManager?.setThresholdWithVadStartDetectionProbability(0.7,0.7,0.8,0.95,10,57)
 
         // Set audio sample rate (8, 16, 24, or 48 kHz)
         vadManager?.setSamplerate(.SAMPLERATE_48)
