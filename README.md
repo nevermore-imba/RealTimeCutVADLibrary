@@ -76,7 +76,7 @@ class ViewController: UIViewController {
         vadManager?.setSileroModel(.v4)
 
         // Calling setVADThreshold is optional. If not called, the recommended default values will be used.
-        vadManager?.setThresholdWithVadStartDetectionProbability(0.7,0.7,0.8,0.95,10,57)
+        // vadManager?.setThresholdWithVadStartDetectionProbability(0.7,0.7,0.8,0.95,10,57)
 
         // Set audio sample rate (8, 16, 24, or 48 kHz)
         vadManager?.setSamplerate(.SAMPLERATE_48)
