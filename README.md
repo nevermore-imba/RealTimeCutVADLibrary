@@ -130,14 +130,15 @@ vadManager?.setThresholdWithVadStartDetectionProbability(
     10,   // Frames to confirm voice start (0.32s)
     57    // Frames to confirm voice end (1.792s)
 )
-
-// Example:
-// Voice activity will be triggered if 80% of the audio points in a 10-frame period
-// have a VAD probability greater than 70%.
-// Voice will be considered ended if 95% of the audio points in a 57-frame period
-// have a VAD probability less than 70%.
-
 ```
+
+### **Threshold Explanation**
+- **Start detection probability threshold (0.7)**: The VAD model must predict speech probability above this threshold to trigger voice start.
+- **End detection probability threshold (0.7)**: The VAD model must predict speech probability below this threshold to trigger voice end.
+- **True positive ratio for voice start (0.8)**: 80% of frames in a given window must be speech for voice activity to begin.
+- **False positive ratio for voice end (0.95)**: 95% of frames in a given window must be silence for voice activity to end.
+- **Start frame count (10 frames ≈ 0.32s)**: Number of frames required to confirm voice activity.
+- **End frame count (57 frames ≈ 1.792s)**: Number of frames required to confirm silence before stopping voice detection.
 
 #### **Important Notes:**
 - **Default Thresholds for Silero v4**: If you do not configure the VAD thresholds manually, the library will use default thresholds optimized for Silero model **v4**.
