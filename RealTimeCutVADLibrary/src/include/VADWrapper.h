@@ -75,9 +75,15 @@ typedef NS_ENUM(NSInteger, SMVER) {
                                   VoiceEndFrameCount:(int)f;
 
 
+/// Processes audio data for VAD (deprecated)
+/// @discussion This method is slow due to unnecessary NSNumber boxing.
+/// Use `processAudioDataWithBuffer:count:` instead.
+/// @deprecated Use `processAudioDataWithBuffer:count:` instead.
+- (void)processAudioData:(NSArray<NSNumber *> *)audioData __attribute__((deprecated("This method is slow due to unnecessary NSNumber boxing. Use processAudioDataWithBuffer:count: instead.")));
+
 // Processes audio data for VAD
 // Accepts an array of NSNumber representing float audio points (mono only)
-- (void)processAudioData:(NSArray<NSNumber *> *)audioData;
+- (void)processAudioDataWithBuffer:(const float *)audioData count:(NSUInteger)count;
 
 // Sets the Silero model version to use for VAD
 - (void)setSileroModel:(SMVER)modelVersion;

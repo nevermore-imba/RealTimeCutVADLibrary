@@ -4,7 +4,8 @@ platform :ios, '16.0'
 target 'TestRealTimeCutVADLibraryApp' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'RealTimeCutVADLibrary', '~> 1.0.4'
+#  pod 'RealTimeCutVADLibrary', :path => '../'
+  pod 'RealTimeCutVADLibrary', '~> 1.0.5'
   # Pods for TestRealTimeCutVADLibraryApp
 
 end

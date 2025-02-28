@@ -138,16 +138,9 @@ extension ViewController {
             guard let channelData = buffer.floatChannelData else {
                 return
             }
-            
-            let frameLength = Int(buffer.frameLength)
+            let frameLength = UInt(buffer.frameLength)
             let monoralData = channelData[0]
-            
-            var monoralDataArray: [NSNumber] = []
-            for i in 0..<frameLength {
-                monoralDataArray.append(NSNumber(value: monoralData[i]))
-            }
-            
-            vadManager.processAudioData(monoralDataArray)
+            vadManager.processAudioData(withBuffer: monoralData, count: frameLength)
         }
         
         audioEngine.prepare()

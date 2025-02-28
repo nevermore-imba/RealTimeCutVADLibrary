@@ -30,7 +30,7 @@ Check out the sample iOS app demonstrating real-time VAD:
 Add the following to your `Podfile` to integrate the library:
 
 ```ruby
-pod 'RealTimeCutVADLibrary', '~> 1.0.4'
+pod 'RealTimeCutVADLibrary', '~> 1.0.5'
 ```
 
 Then, run:
@@ -45,7 +45,7 @@ You can also integrate the library using Swift Package Manager. Add the followin
 
 ```swift
 .dependencies: [
-    .package(url: "https://github.com/helloooideeeeea/RealTimeCutVADLibrary.git", from: "1.0.4")
+    .package(url: "https://github.com/helloooideeeeea/RealTimeCutVADLibrary.git", from: "1.0.5")
 ]
 ```
 
@@ -78,11 +78,19 @@ class ViewController: UIViewController {
         // Set audio sample rate (8, 16, 24, or 48 kHz)
         vadManager?.setSamplerate(.SAMPLERATE_48)
 
-        // Prepare audio data array (mono)
-        var monoralDataArray: [NSNumber] = []
+        // Retrieve audio channel data from Microphone
+        guard let channelData = buffer.floatChannelData else {
+            return
+        }
 
-        // Process audio data through VAD
-        vadManager?.processAudioData(monoralDataArray)
+        // Extract frame length from the audio buffer
+        let frameLength = UInt(buffer.frameLength)
+
+        // Select the first channel as mono audio data
+        let monoralData = channelData[0] // This is UnsafeMutablePointer<Float>
+
+        // Send the audio data directly to VAD processing
+        vadManager?.processAudioData(withBuffer: monoralData, count: frameLength)
     }
 }
 

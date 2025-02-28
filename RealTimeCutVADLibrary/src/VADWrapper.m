@@ -78,6 +78,10 @@ void voiceEndCallbackBridge(void* context, const uint8_t* wavData, size_t wavSiz
     process_vad_audio(_vadInstance, buffer, audioData.count);
 }
 
+- (void)processAudioDataWithBuffer:(const float *)audioData count:(NSUInteger)count {
+    process_vad_audio(_vadInstance, audioData, count);
+}
+
 - (void)voiceStartCallback {
     if ([self.delegate respondsToSelector:@selector(voiceStarted)]) {
         [self.delegate voiceStarted];
