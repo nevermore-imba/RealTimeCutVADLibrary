@@ -94,7 +94,14 @@ class ViewController: UIViewController {
 
         // Send the audio data directly to VAD processing
         vadManager?.processAudioData(withBuffer: monoralData, count: frameLength)
-    }
+
+        // ❌ Deprecated Usage. Do NOT use this method: Slow due to NSNumber conversion
+        var monoralDataArray: [NSNumber] = []
+        for i in 0..<frameLength {
+            monoralDataArray.append(NSNumber(value: monoralData[i]))
+        }
+        // ⚠️ Deprecated method call
+        vadManager?.processAudioData(monoralDataArray)
 }
 
 extension ViewController: VADDelegate {
