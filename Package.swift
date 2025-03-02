@@ -31,8 +31,8 @@ let package = Package(
         ),
         .binaryTarget(
             name: "RealTimeCutVADCXXLibrary",
-            url: "https://github.com/helloooideeeeea/RealTimeCutVADLibraryForXCFramework/releases/download/v1.0.1/RealTimeCutVADCXXLibrary.xcframework.zip",
-            checksum: "4d542414f388f7eb816b29965f59476bfc999fb9dc2a54f8fc9ee25b4da9d3ae"
+            url: "https://github.com/helloooideeeeea/RealTimeCutVADCXXLibrary/releases/download/v1.0.2/RealTimeCutVADCXXLibrary.xcframework.zip",
+            checksum: "7446bffdb61657e54f0b34e527e683e7a88afb985e450c6ea5de03baccc00447"
         ),
         .binaryTarget(
             name: "onnxruntime",

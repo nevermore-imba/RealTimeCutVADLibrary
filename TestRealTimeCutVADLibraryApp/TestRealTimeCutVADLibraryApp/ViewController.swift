@@ -102,7 +102,7 @@ extension ViewController {
             vadManager = nil
             vadManager = VADWrapper()
             vadManager?.delegate = self
-            vadManager?.setSileroModel(.v4)
+            vadManager?.setSileroModel(.v5)
             
             let sampleRate = audioSession.sampleRate
             switch sampleRate {
