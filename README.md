@@ -146,7 +146,7 @@ vadManager?.setThresholdWithVadStartDetectionProbability(
     0.5,  // True positive ratio for voice start
     0.95, // False positive ratio for voice end
     10,   // Frames to confirm voice start (0.32s)
-    57    // Frames to confirm voice end (1.792s)
+    57    // Frames to confirm voice end (1.824s)
 )
 ```
 
@@ -156,7 +156,7 @@ vadManager?.setThresholdWithVadStartDetectionProbability(
 - **True positive ratio for voice start (0.5)**: 50% of frames in a given window must be speech for voice activity to begin.
 - **False positive ratio for voice end (0.95)**: 95% of frames in a given window must be silence for voice activity to end.
 - **Start frame count (10 frames ≈ 0.32s)**: Number of frames required to confirm voice activity.
-- **End frame count (57 frames ≈ 1.792s)**: Number of frames required to confirm silence before stopping voice detection.
+- **End frame count (57 frames ≈ 1.824s)**: Number of frames required to confirm silence before stopping voice detection.
 
 #### **Important Notes:**
 - **Stricter VAD Detection in Silero v5**:
