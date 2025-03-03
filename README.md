@@ -72,7 +72,7 @@ class ViewController: UIViewController {
         // Set VAD delegate to receive callbacks
         vadManager?.delegate = self
 
-        // Set Silero model version (v4 or v5). Version v4 is recommended.
+        // Set Silero model version (v4 or v5). Version v5 is recommended.
         vadManager?.setSileroModel(.v5)
 
         // Calling setVADThreshold is optional. If not called, the recommended default values will be used.
@@ -134,7 +134,7 @@ You can set the audio sample rate using `setSamplerate`:
 Choose between Silero model versions:
 
 - `.v4` - Silero Model Version 4
-- `.v5` - Silero Model Version 5
+- `.v5` - Silero Model Version 5 (recommend)
 
 ### VAD Threshold Configuration
 Customize VAD detection sensitivity with `setThresholdWithVadStartDetectionProbability`:
