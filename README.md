@@ -72,7 +72,7 @@ class ViewController: UIViewController {
         // Set VAD delegate to receive callbacks
         vadManager?.delegate = self
 
-        // Set Silero model version (v4 or v5). Version v4 is recommended.
+        // Set Silero model version (v4 or v5). Version v5 is recommended.
         vadManager?.setSileroModel(.v5)
 
         // Calling setVADThreshold is optional. If not called, the recommended default values will be used.
@@ -134,7 +134,7 @@ You can set the audio sample rate using `setSamplerate`:
 Choose between Silero model versions:
 
 - `.v4` - Silero Model Version 4
-- `.v5` - Silero Model Version 5
+- `.v5` - Silero Model Version 5 (recommend)
 
 ### VAD Threshold Configuration
 Customize VAD detection sensitivity with `setThresholdWithVadStartDetectionProbability`:
@@ -146,7 +146,7 @@ vadManager?.setThresholdWithVadStartDetectionProbability(
     0.5,  // True positive ratio for voice start
     0.95, // False positive ratio for voice end
     10,   // Frames to confirm voice start (0.32s)
-    57    // Frames to confirm voice end (1.792s)
+    57    // Frames to confirm voice end (1.824s)
 )
 ```
 
@@ -156,7 +156,7 @@ vadManager?.setThresholdWithVadStartDetectionProbability(
 - **True positive ratio for voice start (0.5)**: 50% of frames in a given window must be speech for voice activity to begin.
 - **False positive ratio for voice end (0.95)**: 95% of frames in a given window must be silence for voice activity to end.
 - **Start frame count (10 frames ≈ 0.32s)**: Number of frames required to confirm voice activity.
-- **End frame count (57 frames ≈ 1.792s)**: Number of frames required to confirm silence before stopping voice detection.
+- **End frame count (57 frames ≈ 1.824s)**: Number of frames required to confirm silence before stopping voice detection.
 
 #### **Important Notes:**
 - **Stricter VAD Detection in Silero v5**:
