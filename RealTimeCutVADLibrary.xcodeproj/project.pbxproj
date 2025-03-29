@@ -21,6 +21,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		80A442502D978BDA00D6E183 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		804CA5282D5488A000D86AC6 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		804CA56E2D549A4E00D86AC6 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -44,11 +57,29 @@
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		80A442582D978D5900D6E183 /* Exceptions for "RealTimeCutVADLibrary" folder in "Embed Frameworks" phase from "RealTimeCutVADLibrary" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			attributesByRelativePath = {
+				Frameworks/RealTimeCutVADCXXLibrary.xcframework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
+				Frameworks/onnxruntime.xcframework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
+				Frameworks/webrtc_audio_processing.xcframework = (CodeSignOnCopy, RemoveHeadersOnCopy, );
+			};
+			buildPhase = 80A442502D978BDA00D6E183 /* Embed Frameworks */;
+			membershipExceptions = (
+				Frameworks/onnxruntime.xcframework,
+				Frameworks/RealTimeCutVADCXXLibrary.xcframework,
+				Frameworks/webrtc_audio_processing.xcframework,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		80B0BF822D5085970088BCF2 /* RealTimeCutVADLibrary */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				80B0BF902D5085970088BCF2 /* Exceptions for "RealTimeCutVADLibrary" folder in "RealTimeCutVADLibrary" target */,
+				80A442582D978D5900D6E183 /* Exceptions for "RealTimeCutVADLibrary" folder in "Embed Frameworks" phase from "RealTimeCutVADLibrary" target */,
 			);
 			path = RealTimeCutVADLibrary;
 			sourceTree = "<group>";
@@ -131,6 +162,7 @@
 				80B0BF7C2D5085970088BCF2 /* Sources */,
 				80B0BF7D2D5085970088BCF2 /* Frameworks */,
 				80B0BF7E2D5085970088BCF2 /* Resources */,
+				80A442502D978BDA00D6E183 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
