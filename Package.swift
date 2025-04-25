@@ -36,13 +36,13 @@ let package = Package(
         ),
         .binaryTarget(
             name: "onnxruntime",
-            url: "https://github.com/helloooideeeeea/RealTimeCutVADLibraryForXCFramework/releases/download/v1.0.4/onnxruntime.xcframework.zip",
-            checksum: "d29101e959389f8eae869fdc5f3ae3edd80ca95302bd7cd7a5e89661ab3032b7"
+            url: "https://github.com/helloooideeeeea/RealTimeCutVADLibraryForXCFramework/releases/download/v1.0.5/onnxruntime.xcframework.zip",
+            checksum: "1aec02684d70f3e414f18fa2b24af055d31fd07e585c1865c758dbc869a2a1a3"
         ),
         .binaryTarget(
             name: "webrtc_audio_processing",
-            url: "https://github.com/helloooideeeeea/RealTimeCutVADLibraryForXCFramework/releases/download/v1.0.4/webrtc_audio_processing.xcframework.zip",
-            checksum: "352db0aeb2771c6c27001b513058348c89462e0b2fa91375f1dd5114aeaf9020"
+            url: "https://github.com/helloooideeeeea/RealTimeCutVADLibraryForXCFramework/releases/download/v1.0.5/webrtc_audio_processing.xcframework.zip",
+            checksum: "8b664874a30b5f8899607ef2b2606a733c63ec00c1e08a880cf014d0964ce76a"
         )
     ]
 )
