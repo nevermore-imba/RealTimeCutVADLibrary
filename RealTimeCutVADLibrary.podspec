@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'helloooideeeeea' => 'yasushi.sakita@gmail.com' }
   s.source           = { :git => 'https://github.com/helloooideeeeea/RealTimeCutVADLibrary.git', :tag => s.version.to_s }
-  s.platforms        = { :ios => '15.6', :osx => '11.5' }
+  s.platforms        = { :ios => '15.0', :osx => '11.5' }
   s.swift_version    = '5.0'
   s.source_files     = 'RealTimeCutVADLibrary/src/**/*.{h,m}'
   s.public_header_files = 'RealTimeCutVADLibrary/src/include/VADWrapper.h'
